@@ -30,14 +30,3 @@ function inauguration_subtheme_page_attachments_alter(array &$attachments) {
     $attachments['#attached']['library'][] = 'inauguration_subtheme/home_page';
   }
 }
-
-/**
- * Implements hook_preprocess_HOOK().
- */
-function inauguration_subtheme_preprocess_responsive_image_formatter(&$variables) {
-  // Swap the responsive image style.
-  if ($variables['responsive_image_style_id'] == 'stanford_hero_block_wide') {
-    $variables['responsive_image_style_id'] = 'full_responsive';
-    $variables['responsive_image']['#responsive_image_style_id'] = 'full_responsive';
-  }
-}

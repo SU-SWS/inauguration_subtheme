@@ -23,3 +23,12 @@ $fa-font-path:  '~@fortawesome/fontawesome-free/webfonts';
   text-transform: uppercase;
   letter-spacing: 12px;
 }
+
+.arch-banner-image {
+  @media(min-width: 768px) {
+    background: url("../assets/arch-banner.jpg") no-repeat center;
+    background-size: cover;
+  }
+  background: url("../assets/arch-banner-small.jpg") no-repeat center;
+  background-size: cover;
+}

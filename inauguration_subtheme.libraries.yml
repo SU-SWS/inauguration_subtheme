@@ -2,6 +2,8 @@ allpages:
   css:
     theme:
       dist/css/main.css: { }
+  js:
+    src/js/inauguration-subtheme.js: {}
 home_page:
   css:
     theme:
