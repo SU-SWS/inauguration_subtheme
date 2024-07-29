@@ -2,14 +2,18 @@
 
 // My theme's config settings.
 $su-image-path: '~decanter/core/src/img';
-$fa-font-path:  '~@fortawesome/fontawesome-free/webfonts';
+$fa-font-path: '~@fortawesome/fontawesome-free/webfonts';
 
 // Import Decanter Library:
 @import 'decanter/core/src/scss/decanter-no-markup';
 
 #levin {
   font-family: 'Source Serif 4';
-  font-size: 7.5rem;
+  font-size: 6.5rem;
+
+  @media (min-width: 768px) {
+    font-size: 7.5rem;
+  }
 }
 
 #inauguration-date {
@@ -19,16 +23,62 @@ $fa-font-path:  '~@fortawesome/fontawesome-free/webfonts';
 }
 
 #save-the-date {
-  color:  #8C1515;
+  color: #8C1515;
   text-transform: uppercase;
   letter-spacing: 12px;
 }
 
+.arch-banner-hero.su-hero__media {
+  background: transparent;
+  overflow: visible;
+  margin-bottom: 175px;
+
+  @media(min-width: 350px) {
+    margin-bottom: 125px;
+  }
+
+  @media(min-width: 550px) {
+    margin-bottom: 100px;
+  }
+
+  @media(min-width: 650px) {
+    margin-bottom: 50px;
+  }
+
+  @media(min-width: 967px) {
+    margin-bottom: 0;
+  }
+}
+
 .arch-banner-image {
-  @media(min-width: 768px) {
+  position: relative;
+  background: url("../assets/arch.png") no-repeat center;
+  background-size: cover;
+
+  &::after {
+    content: '';
+    display: block;
+    background: url("../assets/seal.png") no-repeat center;
+    background-size: cover;
+    position: absolute;
+    z-index: 1;
+    top: 70px;
+    left: calc(50% - 100px);
+    width: 200px;
+    aspect-ratio: 1;
+
+    @media(min-width: 768px) {
+      left: calc(50% - 125px);
+      width: 250px;
+    }
+  }
+
+  @media(min-width: 968px) {
     background: url("../assets/arch-banner.jpg") no-repeat center;
     background-size: cover;
+
+    &:after {
+      display: none;
+    }
   }
-  background: url("../assets/arch-banner-small.jpg") no-repeat center;
-  background-size: cover;
 }
