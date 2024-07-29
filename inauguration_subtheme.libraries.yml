@@ -1,0 +1,4 @@
+allpages:
+  css:
+    theme:
+      dist/css/main.css: { }
