@@ -9,7 +9,8 @@
  * Prepares variables for the html.html.twig template.
  */
 function inauguration_subtheme_preprocess_html(&$variables) {
-  $variables['stanford_basic_path'] = \Drupal::service('extension.list.theme')->getPath('stanford_basic');
+  $variables['stanford_basic_path'] = \Drupal::service('extension.list.theme')
+    ->getPath('stanford_basic');
 }
 
 /**
@@ -25,7 +26,18 @@ function inauguration_subtheme_theme_suggestions_block_alter(array &$suggestions
  * Implements hook_page_attachments_alter().
  */
 function inauguration_subtheme_page_attachments_alter(array &$attachments) {
-  if(\Drupal::service('path.matcher')->isFrontPage()){
+  if (\Drupal::service('path.matcher')->isFrontPage()) {
     $attachments['#attached']['library'][] = 'inauguration_subtheme/home_page';
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function inauguration_subtheme_preprocess_responsive_image_formatter(&$variables) {
+  // Swap the responsive image style.
+  if ($variables['responsive_image_style_id'] == 'stanford_hero_block_wide') {
+    $variables['responsive_image_style_id'] = 'full_responsive';
+    $variables['responsive_image']['#responsive_image_style_id'] = 'full_responsive';
   }
 }
