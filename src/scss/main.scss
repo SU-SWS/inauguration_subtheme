@@ -7,11 +7,19 @@ $fa-font-path:  '~@fortawesome/fontawesome-free/webfonts';
 // Import Decanter Library:
 @import 'decanter/core/src/scss/decanter-no-markup';
 
-// Imports
-@import './utilities/index';
-@import './base/index';
-@import './components/index';
-@import './layout/index';
-@import './print/index';
-@import './state/index';
-@import './theme/index';
+#levin {
+  font-family: 'Source Serif 4';
+  font-size: 7.5rem;
+}
+
+#inauguration-date {
+  font-size: 5rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+#save-the-date {
+  color:  #8C1515;
+  text-transform: uppercase;
+  letter-spacing: 12px;
+}

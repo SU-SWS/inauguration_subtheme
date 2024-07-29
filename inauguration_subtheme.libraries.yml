@@ -2,3 +2,7 @@ allpages:
   css:
     theme:
       dist/css/main.css: { }
+home_page:
+  css:
+    theme:
+      dist/css/home.css: { }

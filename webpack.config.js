@@ -17,6 +17,7 @@ const config = {
 var webpackConfig = {
   entry: {
     "main": ["./src/scss/main.scss"],
+    "home": ["./src/scss/home.scss"],
     "ckeditor5": ["./src/scss/ckeditor5.scss"]
   },
   output: {

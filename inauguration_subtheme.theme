@@ -20,3 +20,12 @@ function inauguration_subtheme_theme_suggestions_block_alter(array &$suggestions
     $suggestions[] = 'block__stanford_basic_search';
   }
 }
+
+/**
+ * Implements hook_page_attachments_alter().
+ */
+function inauguration_subtheme_page_attachments_alter(array &$attachments) {
+  if(\Drupal::service('path.matcher')->isFrontPage()){
+    $attachments['#attached']['library'][] = 'inauguration_subtheme/home_page';
+  }
+}
